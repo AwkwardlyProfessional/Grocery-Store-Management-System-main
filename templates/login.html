@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Grocery Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F2C4CE; /* Light pink background */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .main-container {
+            display: flex;
+            align-items: center;
+            width: 80%;
+            max-width: 1200px;
+        }
+        .welcome-section {
+            flex: 1;
+            position: relative;
+        }
+        .welcome-section img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .welcome-text {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 32px;
+            font-weight: bold;
+            color: #FFFFFF;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .login-container {
+            flex: 1;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .login-container h1 {
+            color: #F58F7C;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        .login-container h3 {
+            color: #777;
+            font-size: 14px;
+            margin: 10px 0 20px;
+        }
+        .login-container a {
+            color: #F58F7C;
+            text-decoration: none;
+        }
+        .login-container form {
+            display: flex;
+            flex-direction: column;
+        }
+        .login-container label {
+            font-weight: bold;
+            margin-bottom: 6px;
+            text-align: left;
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .login-container button[type="submit"] {
+            background-color: #F58F7C;
+            color: #fff;
+            border: none;
+            padding: 12px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .login-container button[type="submit"]:hover {
+            background-color: #e07c6a;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="welcome-section">
+            <img src="{{ url_for('static', filename='images/Home.jpg') }}" alt="Grocery Shop">
+            <div class="welcome-text">Welcome to Our Grocery Shop!</div>
+        </div>
+
+        <div class="login-container">
+            <h1>Login Yourself</h1>
+            <h3>Don't have an account? <a href="{{ url_for('registrationPage') }}">Create Account</a></h3>
+            <form action="/login" method="post">
+                <label for="useremail">Email</label>
+                <input type="text" id="useremail" name="useremail" required>
+
+                <label for="userpass">Password</label>
+                <input type="password" id="userpass" name="userpass" required>
+
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
