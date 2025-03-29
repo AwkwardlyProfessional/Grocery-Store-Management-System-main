@@ -81,7 +81,7 @@
 1. Clone the repository:
 
 ```bash
-  git clone <Paste repository link here>
+  git clone (https://github.com/AwkwardlyProfessional/Grocery-Store-Management-System-main)
 
 ```
 
